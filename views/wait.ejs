@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bekleme Sayfası</title>
+  <style>
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#countdown {
+  font-size: 2.1em;
+  color: #333;
+  display: flex;
+  justify-content: center; /* Yatay ortalama */
+  align-items: center; /* Dikey ortalama */
+  height: 100vh; /* Sayfanın tam yüksekliği kadar genişlet */
+}
+
+#linkGo {
+  font-size: 0.8em;
+  color: #acacac;
+  text-decoration: none;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  border: 1px solid #acacac;
+  padding: 10px 20px;
+  width: 20%;
+  height: 30px;
+  border-radius: 3.3px;  display: flex;
+  justify-content: center; /* Yatay ortalama */
+  align-items: center; /* Dikey ortalama */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#linkGo:hover {
+  background-color: #eaeaea;
+  color: #000000;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  #countdown {
+    font-size: 2em;
+    margin-top: 50px;
+  }
+
+  #linkGo {
+    font-size: 1.2em;
+  }
+}
+
+  </style>
+  <script>
+  let countdown = 10;
+let countdownInterval;
+
+function startCountdown() {
+  const countdownDisplay = document.getElementById('countdown');
+  const linkGo = document.getElementById('linkGo');
+
+  countdownInterval = setInterval(function() {
+    countdownDisplay.textContent = countdown;
+    countdown--;
+
+    if (countdown < 0) {
+      clearInterval(countdownInterval);
+      countdownDisplay.style.display = 'none';
+      linkGo.textContent = "Link'e Git";
+      linkGo.style.display = 'flex';
+    }
+  }, 1000);
+}
+
+// Sayfa focus kaybettiğinde (kullanıcı başka bir sayfaya gittiğinde)
+window.onblur = function() {
+  clearInterval(countdownInterval); // Geri sayımı durdur
+};
+
+// Sayfa focus kazandığında (kullanıcı geri geldiğinde)
+window.onfocus = function() {
+  if (countdown > 0) {
+    startCountdown(); // Geri sayımı devam ettir
+  }
+};
+
+// Sayfa yüklendiğinde geri sayımı başlat
+window.onload = startCountdown;
+
+  </script>
+</head>
+<body>
+  <div id="countdown">10</div>
+  <div class="hoco">
+    <a id="linkGo" style="display: none;" href="<%= metin %>">LİNKE GİT</a>
+
+  </div>
+
+
+  <script>
+    // Sayfa yüklendiğinde geri sayımı başlat
+    window.onload = startCountdown;
+  </script>
+</body>
+</html>
