@@ -1,0 +1,78 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  overflow: hidden;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+::-webkit-scrollbar {
+  position: fixed;
+  display: none;
+}
+
+#countdown {
+  font-size: 2.1em;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#linkGo {
+  font-size: 0.8em;
+  color: #acacac;
+  text-decoration: none;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  border: 1px solid #c2c2c2;
+  padding: 10px 20px;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 20%;
+  height: 30px;
+  border-radius: 3.3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#linkGo:hover {
+  background-color: #eaeaea;
+  color: #000000;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  #countdown {
+    font-size: 2em;
+    margin-top: 50px;
+  }
+
+  .hoco {
+    height: 100vh;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #linkGo {
+    width: 40%;
+    font-size: 0.95em;
+  }
+
+  #countdown {
+    font-size: 1.7em;
+  }
+}

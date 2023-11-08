@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+* {
+    font-family: 'Nunito', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+p {
+    font-size: 16px;
+}
+
+body {
+    display: flex;
+    overflow: hidden;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    transition: box-shadow 0.3s ease;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 3.5px;
+    border: 1px solid lightgrey;
+    margin-bottom: 10px;
+    width: 400px;
+}
+
+input:focus {
+    outline: 1px;
+    border-color: rgba(58, 166, 121, 0.723);
+}
+#kisalt{
+    display: none;
+}
+button {
+    cursor: pointer;
+    padding: 15px;
+    background-color: #3597ff;
+    color: white;
+    height: 50px;
+    width: 100%;
+    border: none;
+    font-size: 16.5px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+button:hover {
+    background-color: rgb(17, 132, 255);
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+::selection {
+    background: #00b35f73;
+}
+
+button[disabled] {
+    opacity: 0.6;
+    background: #0056b3;
+    cursor: not-allowed;
+}
+
+#kod {
+    color: #474747;
+    font-size: 16.5px;
+    height: 52px;
+}
+
+#metin {
+    color: #474747;
+    font-size: 16.5px;
+    height: 52px;
+}
+
+@media (max-width: 767px) {
+    body {
+        display: flex;
+    }
+
+    input {
+        height: 10vh;
+        width: 140%;
+    }
+
+    .inputs {
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    button {
+        width: 14 0%;
+    }
+}

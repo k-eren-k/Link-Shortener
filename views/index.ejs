@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>SURL - URL KISALTICI</title>
+    <link rel="icon" href="favicon adresi" type="/img/chrome.png" />
+    <meta property="og:title" content="Short Url" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="/img/chrome.png" />
+    <meta property="og:url" content="https://surl.xyz" />
+    <meta property="og:description" content="Kolay Url Kısaltıcı" />
+    <meta property="og:color" content="#2169AC" />
+
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="/js/index.js"></script>
+
+  </head>
+
+  <body>
+
+    <form onsubmit="copyurl()" action="/kaydet" method="POST">
+      <div class="inputs">
+        <input type="url" id="metin" name="metin" placeholder="URL" required>
+        <input type="text" id="kod" name="kod" readonly>
+        <button id=kaydet" type="submit">Kaydet</button>
+      </div>
+      <button id="kisalt" type="button" onclick="generateCode()">KISALT</button>
+    </form>
+  </body>
+
+</html>
